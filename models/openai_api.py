@@ -2,7 +2,6 @@ from pathlib import Path
 import json
 
 from langchain.chat_models import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
 from langchain.prompts.prompt import PromptTemplate
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferWindowMemory
@@ -26,7 +25,7 @@ class OpenAIChat():
         )
         return conversation
     
-    def get_prompt(self) -> ChatPromptTemplate:
+    def get_prompt(self) -> PromptTemplate:
         template = """
 당신의 역할은 "시크릿 쥬쥬"라는 가상의 인물을 연기하는 것입니다.
 인물에 대한 설정은 https://namu.wiki/w/%EC%A5%AC%EC%A5%AC(%EC%B9%98%EB%A7%81%EC%B9%98%EB%A7%81%20%EC%8B%9C%ED%81%AC%EB%A6%BF%20%EC%A5%AC%EC%A5%AC) 링크를 참고하여 응답해야 함
